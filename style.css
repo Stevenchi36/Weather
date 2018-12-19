@@ -1,12 +1,16 @@
 body {
-  font-family: "Roboto", sans-serif;
+	font-family: "Roboto", sans-serif;
+	background-color: #00a0e6;
+	background-image: linear-gradient(to right top, #00b1ff, #00a0e6, #008fce, #007eb6, #006e9f);
 }
 .switch {
-  position: relative;
+  position: fixed;
   display: block;
   width: 60px;
   height: 34px;
-  margin: 5px auto;
+	margin: 5px auto;
+	left: 20px;
+	top: 20px;
 }
 .switch input {
   display: none;
@@ -18,14 +22,14 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: lightblue;
+  background-color: #6895BB;
 	transition: 0.4s;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding-left: 10px;
 	padding-right: 10px;
-	color: white;
+	color: rgb(211, 211, 211);
 }
 .slider:before {
   position: absolute;
@@ -34,11 +38,8 @@ body {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+	background-color: rgb(211, 211, 211);
   transition: 0.4s;
-}
-input:checked + .slider {
-  background-color: lightblue;
 }
 input:checked + .slider:before {
   transform: translateX(25px);
@@ -58,8 +59,9 @@ input:checked + .slider:before {
 .weather-container {
   flex-grow: 1;
   max-width: 500px;
-  height: 300px;
-  background-color: lightblue;
+	height: 300px;
+	color: black;
+  background-color: #6895BB;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
