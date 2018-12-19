@@ -1,0 +1,146 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+.switch {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 34px;
+  margin: 5px auto;
+}
+.switch input {
+  display: none;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: lightblue;
+	transition: 0.4s;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: white;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: lightblue;
+}
+input:checked + .slider:before {
+  transform: translateX(25px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.weather-container {
+  flex-grow: 1;
+  max-width: 500px;
+  height: 300px;
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.location-name {
+  font-size: 32px;
+}
+.temperature {
+  font-size: 56px;
+}
+.middle-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.condition {
+  margin-right: 25px;
+  font-size: 24px;
+}
+.high-low-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+.low-temp {
+  margin-left: 15px;
+  margin-top: 7px;
+  opacity: 0.7;
+}
+.compass {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 50px;
+  height: 50px;
+}
+.cardinals {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 10px;
+}
+.top,
+.bottom {
+  margin: 0 auto;
+}
+.middle {
+  display: flex;
+  justify-content: space-between;
+}
+.middle-info .middle {
+  display: flex;
+  align-items: flex-end;
+}
+.wind-speed {
+  font-size: 14px;
+  margin-left: 3px;
+}
+.mph {
+  font-size: 12px;
+}
+svg {
+  display: block;
+  margin: 0 auto;
+  transform: rotate(240deg);
+}
+svg path {
+  fill: red;
+  transform: rotate(0deg);
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Weather</title>
+</head>
+
+<body>
+  <label class="switch">
+    <input type="checkbox" id="togUnits">
+    <div class="slider round">
+      <span class="far">F</span>
+      <span class="cel">C</span>
+    </div>
+  </label>
+  <div class="main-container">
+    <div class="weather-container">
+      <div class="top-info">
+        <div class="location-name" id="location-name">South Boston</div>
+        <div class="temperature" id="temperature">57&deg;</div>
+      </div>
+      <div class="middle-info">
+        <div class="condition" id="condition">Cloudy</div>
+        <div class="middle">
+          <div class="compass">
+            <!--         <div class="x"></div>
+                <div class="y"></div> -->
+            <div class="cardinals">
+              <div class="top">N</div>
+              <div class="middle">
+                <div>W</div>
+                <div>E</div>
+              </div>
+              <div class="bottom">S</div>
+            </div>
+            <svg width="16" height="36" id="svg" viewBox="0 0 16 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15.2217 24.5536L8 0L0.778339 24.5536C0.279381 25.5973 0 26.766 0 28C0 32.4183 3.58172 36 8 36C12.4183 36 16 32.4183 16 28C16 26.766 15.7206 25.5973 15.2217 24.5536ZM8 32C10.2091 32 12 30.2091 12 28C12 25.7909 10.2091 24 8 24C5.79086 24 4 25.7909 4 28C4 30.2091 5.79086 32 8 32Z" fill="white" />
+            </svg>
+          </div>
+          <div id="wind-speed" class="wind-speed">0<span class="mph"> mi/h</span></div>
+        </div>
+        <div class="high-low-container">
+          <div class="high-temp" id="high">62&deg;</div>
+          <div class="low-temp" id="low">44&deg;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
