@@ -12,14 +12,42 @@
     windSpeed: 3,
     windDir: 60
   }
+  // thunder: 200
+  // drizzle: 300
+  // rain:    500
+  // snow:    600
+  // fog:     700
+  // clear:   800
+  // cloudy:  801
   const weatherImageLinks = {
-    thunder: "200",
-    drizzle: "300",
-    rain: "500",
-    snow: "600",
-    fog: "700",
-    clear: "800",
-    cloudy: "801"
+    thunder: {
+      image: "lightning.jpg",
+      textColor: "white"
+    },
+    drizzle: {
+      image: "fog.jpg",
+      textColor: "black"
+    },
+    rain: {
+      image: "rain.jpg",
+      textColor: "white"
+    },
+    snow: {
+      image: "snow.jpg",
+      textColor: "black"
+    },
+    fog: {
+      image: "fog.jpg",
+      textColor: "black"
+    },
+    clear: {
+      image: "clear.jpg",
+      textColor: "black"
+    },
+    cloudy: {
+      image: "cloudy.jpg",
+      textColor: "black"
+    }
   }
   
   
@@ -31,6 +59,7 @@
       .then((responseData) => {
         console.log(responseData);
         weather = getWeatherObj(responseData);
+        setBackground(weather.id);
         if(document.getElementById("togUnits").checked) {
           displayWeatherFar(weather);
         } else {
@@ -51,7 +80,8 @@
       maxTemp: data.main.temp_max,
       minTemp: data.main.temp_min,
       windSpeed: data.wind.speed,
-      windDir: data.wind.deg
+      windDir: data.wind.deg,
+      id: data.weather[0].id
     }
     console.log(obj);
     return obj
@@ -106,6 +136,62 @@
   function mpsToMiles(speed) {
     let mph = speed * 2.237
     return mph
+  }
+  // Background
+  function setBackground(code) {
+    let bg = "clear.jpg";
+    let color = "black";
+    let weatherContainer = document.getElementById("weather-container");
+    let floorCode = 0;
+    if (code > 800) {
+      floorCode = 801;
+    }
+    else {
+      floorCode = Math.floor(code / 100) * 100;
+    }
+    switch(floorCode) {
+      case 200: {
+        bg = weatherImageLinks.thunder.image;
+        color = weatherImageLinks.thunder.textColor;
+        break;
+      }
+      case 300: {
+        bg = weatherImageLinks.fog.image;
+        color = weatherImageLinks.fog.textColor;
+        break;
+      }
+      case 500: {
+        bg = weatherImageLinks.rain.image;
+        color = weatherImageLinks.rain.textColor;
+        break;
+      }
+      case 600: {
+        bg = weatherImageLinks.snow.image;
+        color = weatherImageLinks.snow.textColor;
+        break;
+      }
+      case 700: {
+        bg = weatherImageLinks.fog.image;
+        color = weatherImageLinks.fog.textColor;
+        break;
+      }
+      case 800: {
+        bg = weatherImageLinks.clear.image;
+        color = weatherImageLinks.clear.textColor;
+        break;
+      }
+      case 801: {
+        bg = weatherImageLinks.cloudy.image;
+        color = weatherImageLinks.cloudy.textColor;
+        break;
+      }
+      default: {
+        bg = "clear.jpg";
+        color = "black";
+      }
+    }
+    weatherContainer.style.backgroundImage = "url(images/" + bg;
+    weatherContainer.style.color = color;
   }
 })();
 
