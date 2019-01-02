@@ -10,7 +10,8 @@
     maxTemp: 62,
     minTemp: 47,
     windSpeed: 3,
-    windDir: 60
+    windDir: 60,
+    id: 800
   }
   // thunder: 200
   // drizzle: 300
@@ -109,13 +110,9 @@
   
   document.getElementById("togUnits").addEventListener("click", function() {
     if (document.getElementById("togUnits").checked) {
-      console.log("far");
-      console.log(weather);
       displayWeatherFar(weather);
     }
     else{
-      console.log("cel");
-      console.log(weather);
       displayWeatherCel(weather);
     }
   });
@@ -192,6 +189,12 @@
     }
     weatherContainer.style.backgroundImage = "url(images/" + bg;
     weatherContainer.style.color = color;
+    if(color === "black") {
+      weatherContainer.style.textShadow = "0px 0px 1px white";
+    }
+    else {
+      weatherContainer.style.textShadow = "0px 0px 1px black";
+    }
   }
 })();
 
