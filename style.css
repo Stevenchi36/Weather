@@ -1,16 +1,24 @@
 body {
 	font-family: "Roboto", sans-serif;
 	background-color: #00a0e6;
-	background-image: linear-gradient(to right top, #00b1ff, #00a0e6, #008fce, #007eb6, #006e9f);
+  background-image: linear-gradient(to right top, #00b1ff, #00a0e6, #008fce, #007eb6, #006e9f);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.controls {
+  position: absolute;
+  left: 30px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .switch {
-  position: fixed;
   display: block;
+  position: relative;
   width: 60px;
   height: 34px;
-	margin: 5px auto;
-	left: 20px;
-	top: 20px;
+  padding: 0;
 }
 .switch input {
   display: none;
@@ -49,6 +57,23 @@ input:checked + .slider:before {
 }
 .slider.round:before {
   border-radius: 50%;
+}
+.zip-code {
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  margin-top: 10px;
+}
+.submitBtn {
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #6895BB;
+  color: rgb(211, 211, 211);
+}
+.submitBtn:hover {
+  cursor: pointer;
 }
 .main-container {
   display: flex;

@@ -73,6 +73,27 @@
     });
   }
   
+  document.getElementById("getWeatherBtn").addEventListener("click", function (){
+    let zip = document.getElementById("zip-code").value;
+    let url = weatherLink + "zip=" + zip + "&appid=" + appID;
+    console.log(url);
+    fetch(url)
+      .then(res => res.json())
+      .then((responseData) => {
+        console.log(responseData);
+        weather = getWeatherObj(responseData);
+        setBackground(weather.id);
+        if(document.getElementById("togUnits").checked) {
+          displayWeatherFar(weather);
+        } else {
+          displayWeatherCel(weather);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
   function getWeatherObj (data) {
     const obj = {
       name: data.name,

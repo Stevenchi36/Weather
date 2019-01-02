@@ -11,13 +11,17 @@
 </head>
 
 <body>
-  <label class="switch">
-    <input type="checkbox" id="togUnits">
-    <div class="slider round">
-      <span class="far">F</span>
-      <span class="cel">C</span>
-    </div>
-  </label>
+  <div class="controls">
+    <label class="switch">
+      <input type="checkbox" id="togUnits">
+      <div class="slider round">
+        <span class="far">F</span>
+        <span class="cel">C</span>
+      </div>
+    </label>
+    <input type="text" id="zip-code" class="zip-code" placeholder="Zip Code" pattern="\d*" maxlength="5">
+    <button type="submit" id="getWeatherBtn" class="submitBtn">Get Weather</button>
+  </div>
   <div class="main-container">
     <div class="weather-container" id="weather-container">
       <div class="top-info">
