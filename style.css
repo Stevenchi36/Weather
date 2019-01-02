@@ -68,6 +68,8 @@ input:checked + .slider:before {
   padding: 30px;
   box-sizing: border-box;
   border-radius: 10px;
+  background-position: center;
+  box-shadow: 1px 1px 5px black;
 }
 .top-info {
   display: flex;
@@ -87,7 +89,7 @@ input:checked + .slider:before {
 }
 .condition {
   margin-right: 25px;
-  font-size: 24px;
+  font-size: 26px;
 }
 .high-low-container {
   display: flex;
@@ -116,7 +118,7 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 10px;
+  font-size: 12px;
 }
 .top,
 .bottom {
@@ -131,7 +133,7 @@ input:checked + .slider:before {
   align-items: flex-end;
 }
 .wind-speed {
-  font-size: 14px;
+  font-size: 16px;
   margin-left: 3px;
 }
 .mph {
