@@ -71,8 +71,10 @@ input:checked + .slider:before {
   padding: 10px;
   background-color: #6895BB;
   color: rgb(211, 211, 211);
+  box-shadow: 1px 1px 3px black;
 }
 .submitBtn:hover {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.527);
   cursor: pointer;
 }
 .main-container {
