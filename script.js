@@ -73,7 +73,7 @@
     });
   }
   
-  document.getElementById("getWeatherBtn").addEventListener("click", function (){
+  document.getElementById("getWeatherBtn").addEventListener("click", function () {
     let zip = document.getElementById("zip-code").value;
     let url = weatherLink + "zip=" + zip + "&appid=" + appID;
     console.log(url);
@@ -92,6 +92,18 @@
       .catch((err) => {
         console.log(err);
       });
+  });
+
+  document.getElementById("zip-code").addEventListener("keyup", function (e) {
+    let regex = new RegExp("^\\d{5}");
+    let zip = e.target.value;
+    let btn = document.getElementById("getWeatherBtn");
+    if (regex.test(zip)) {
+      btn.disabled = false;
+    }
+    else {
+      btn.disabled = true;
+    }
   });
 
   function getWeatherObj (data) {

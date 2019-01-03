@@ -80,6 +80,10 @@ input:checked + .slider:before {
 .submitBtn:focus {
   outline: none;
 }
+.submitBtn:disabled {
+  cursor: not-allowed;
+  box-shadow: none;
+}
 .main-container {
   display: flex;
   justify-content: center;
