@@ -77,6 +77,9 @@ input:checked + .slider:before {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.527);
   cursor: pointer;
 }
+.submitBtn:focus {
+  outline: none;
+}
 .main-container {
   display: flex;
   justify-content: center;
