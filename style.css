@@ -37,7 +37,8 @@ body {
 	align-items: center;
 	padding-left: 10px;
 	padding-right: 10px;
-	color: rgb(211, 211, 211);
+  color: rgb(211, 211, 211);
+  box-shadow: 2px 2px 3px black;
 }
 .slider:before {
   position: absolute;
@@ -63,6 +64,8 @@ input:checked + .slider:before {
   border: none;
   text-align: center;
   margin-top: 10px;
+  line-height: 1.7em;
+  box-shadow: 1px 1px 3px black;
 }
 .submitBtn {
   border-radius: 10px;
